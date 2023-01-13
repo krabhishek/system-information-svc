@@ -1,10 +1,12 @@
 const si = require('systeminformation');
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const PORT = process.env.FF_DEVICE_SVC_PORT || 4422;
 
 app.disable('x-powered-by');
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
